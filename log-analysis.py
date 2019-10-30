@@ -27,7 +27,7 @@ cur.execute("""create view authors_articles as
                select authors.id, name, slug from authors join articles
                on authors.id = articles.author;""")
 cur.execute("""select name, count(*) as times
-	           from authors_articles join log
+               from authors_articles join log
                on log.path like '/article/' || authors_articles.slug
                group by name
                order by times desc;""")
@@ -42,20 +42,21 @@ print('\n')
 # On which days did more than 1% of requests lead to errors?
 cur.execute("""create view log_all as
                select date(time) as day, count(*) as times from log
-	           group by date(time);""")
+               group by date(time);""")
 cur.execute("""create view log_error as
                select date(time) as day, count(*) as times from log
                where status like '404%'
-	           group by date(time);""")
+               group by date(time);""")
 cur.execute("""select log_all.day, log_all.times, log_error.times
-	           from log_all join log_error
-	           on log_all.day = log_error.day
-	           where (log_error.times::float / log_all.times)*100 > 1;""")
+               from log_all join log_error
+               on log_all.day = log_error.day
+               where (log_error.times::float / log_all.times)*100 > 1;""")
 result = cur.fetchall()
 
 print("On which days did more than 1% of requests lead to errors?")
 for row in result:
-    print('* ' + row[0].strftime("%B %d, %Y") + ' - ' + str((float(row[2])/row[1])*100) + "% errors")
+    print('* ' + row[0].strftime("%B %d, %Y") + ' - '
+          + str((float(row[2])/row[1])*100) + "% errors")
 print('\n')
 
 
