@@ -1,0 +1,17 @@
+What are the most popular three articles of all time?
+* That political candidate is a real jerk, according to a rival. - 338647 views
+* Rumors that bears love berries were confirmed by bear, who also proclaims love of salmon and honey. - 253801 views
+* All bad things have gone away, according to a poll of good people Thursday. - 170098 views
+
+
+Who are the most popular article authors of all time?
+* Ursula La Multa - 507594 views
+* Rudolf von Treppenwitz - 423457 views
+* Anonymous Contributor - 170098 views
+* Markoff Chaney - 84557 views
+
+
+On which days did more than 1% of requests lead to errors?
+* July 17, 2016 - 2.248632467972133% errors
+
+
