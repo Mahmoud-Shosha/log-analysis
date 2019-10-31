@@ -13,10 +13,25 @@ The reports are:
 
 ## Installation
 
-- Install python
-- Install Postgresql 
-- Install requirements.txt
+- [Download the VirtualBox](https://www.virtualbox.org/wiki/Downloads)
+- [Download the Vagrant](https://www.vagrantup.com/downloads.html)
+- [Download the VM configuration](https://github.com/udacity/fullstack-nanodegree-vm)  
+Then setup the VM:  
+`cd fullstack-nanodegree-vm`  
+`cd vagrant`  
+`vagrant up`  
+- [Download the database file](https://d17h27t6h515a5.cloudfront.net/topher/2016/August/57b5f748_newsdata/newsdata.zip)  
+Then unzip this file. The file inside is called newsdata.sql. Put this file into the vagrant directory,
+which is shared with your virtual machine. Then run:  
+`psql -d news -f newsdata.sql`
 - Download the repository
+
+## Getting started
+
+- Open the vm:  
+`vagrant ssh`
+- Run the script:  
+`python log-analysis`
 
 ## More info
 
